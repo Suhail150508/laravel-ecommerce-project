@@ -12,7 +12,7 @@
 								<ul class="footer-links">
 									<li><a href="#"><i class="fa fa-map-marker"></i>Dinajpur Chirirbander Road</a></li>
 									<li><a href="#"><i class="fa fa-phone"></i>+017-98562848</a></li>
-									<li><a href="sohail1054155@gmail.com"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+									<li><a href="https://sohail1054155@gmail.com"><i class="fa fa-envelope-o"></i>sohail1054155@gmail.com</a></li>
 								</ul>
 							</div>
 						</div>

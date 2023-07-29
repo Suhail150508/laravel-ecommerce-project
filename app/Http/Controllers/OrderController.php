@@ -24,4 +24,5 @@ class OrderController extends Controller
       $order_details = Order_Detail::where('order_id', $id)->get();
         return view('admin.order.invoice',compact('orders','order_details'));
     }
+
 }

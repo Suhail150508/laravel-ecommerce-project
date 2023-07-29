@@ -156,25 +156,25 @@
 						<div class="hot-deal">
 							<ul class="hot-deal-countdown">
 								<li>
-									<div>
+									<div style="background-color:mediumblue;padding:4px 1px">
 										<h3>02</h3>
 										<span>Days</span>
 									</div>
 								</li>
 								<li>
-									<div>
+									<div  style="background-color:mediumblue;padding:4px 1px">
 										<h3>10</h3>
 										<span>Hours</span>
 									</div>
 								</li>
 								<li>
-									<div>
+									<div  style="background-color:mediumblue;padding:4px 1px">
 										<h3>34</h3>
 										<span>Mins</span>
 									</div>
 								</li>
 								<li>
-									<div>
+									<div  style="background-color:mediumblue;padding:4px 1px">
 										<h3>60</h3>
 										<span>Secs</span>
 									</div>
@@ -182,7 +182,7 @@
 							</ul>
 							<h2 class="text-uppercase">hot deal this week</h2>
 							<p>New Collection Up to 50% OFF</p>
-							<a class="primary-btn cta-btn" href="#">Shop now</a>
+							<a  class="btn " style="background-color:mediumblue;color:white;font-weight:900;font-size:2rem;border-radius:10px"  href="#" > Shop now</a>
 						</div>
 					</div>
 				</div>
@@ -266,11 +266,11 @@
                                             </div>
 
                                             <div class="add-to-cart">
-                                                <form action="{{ url('/add-to-cart') }}" method="post">
+                                                <form action="{{ url('/add-to-cart') }}" method="post" >
                                                     @csrf
                                                 <input type="hidden" name="id" value="{{ $topProduct->id }}">
                                                 <input type="hidden" name="price" value="{{ $topProduct->price }}">
-                                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                                <button class="add-to-cart-btn" ><i class="fa fa-shopping-cart"></i> add to cart</button>
                                             </form>
                                             </div>
 

@@ -90,6 +90,7 @@ Route::get('/products{id}',[ProductController::class,'status']);
 
 Route::get('/order',[OrderController::class,'order']);
 Route::get('/order_details/{id}',[OrderController::class,'order_details']);
+
 Route::get('/invoice/{id}',[OrderController::class,'invoice']);
 
 
