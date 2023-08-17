@@ -44,7 +44,7 @@ class UnitController extends Controller
          $units->description = $request->description;
 
         $units->save();
-         return Redirect()->back();
+        return back()->with('message','New Unit added.');
      }
 
     /**

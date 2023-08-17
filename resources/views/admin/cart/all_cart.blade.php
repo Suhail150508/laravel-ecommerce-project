@@ -36,7 +36,7 @@
                 </div>
             </form>
               </div>
-              {{ $cart->quantity }}
+              {{-- {{ $cart->quantity }} --}}
             </td>
             <td>&#2547; {{ $cart->quantity * $cart->price }}</td>
             <td>
@@ -72,9 +72,9 @@
     $customer_id = Session::get('id');
 @endphp
 @if ( $customer_id != Null)
-<a class="btn btn-primary" href="{{ url('/checkout') }}" style="padding:1rem 5rem; margin-left:40rem;font-size:2.5rem;margin-bottom:2rem;">Check Out</a>
+<a class="btn btn-primary" href="{{ url('/checkout') }}" style="padding:.6rem ; margin-left:16rem;font-size:2.5rem;margin-bottom:2rem;">Check Out</a>
 @else
-<a class="btn btn-primary" href="{{ url('/login') }}" style="padding:1rem 5rem; margin-left:40rem;font-size:2.5rem;margin-bottom:2rem;">Check Out</a>
+<a class="btn btn-primary" href="{{ url('/login') }}" style="padding:.6rem ; margin-left:16rem;font-size:2.5rem;margin-bottom:2rem;">Check Out</a>
 @endif
 </div>
 

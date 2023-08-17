@@ -54,7 +54,7 @@
 						</li>
 
 						<li>
-							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet" style="font-size: 1.2rem"> Colors</span>     <i class="fa fa-arrow-circle-right fa-2x" style="margin-.5eft:1rem; font-size:1.3rem;background-color:black"> </i> </a>
+							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet" style="font-size: 1.2rem"> Colors</span> <i class="fa fa-arrow-circle-right fa-2x" style="margin-.5eft:1rem; font-size:1.3rem;background-color:black"> </i> </a>
 							<ul>
 								<li><a class="submenu" href="{{ url('/colors/create') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Create color</span></a></li>
 								<li><a class="submenu" href="{{ url('/colors') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> All color</span></a></li>

@@ -60,7 +60,7 @@ class CategoryController extends Controller
         //     $categories->image = $fileName;
         // }
         $categories->save();
-        return Redirect::to('categories');
+        return back()->with('message','New Category added ! ok.');
     }
 
 

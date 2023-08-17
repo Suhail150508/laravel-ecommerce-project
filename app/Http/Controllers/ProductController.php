@@ -83,7 +83,8 @@ class ProductController extends Controller
             $product['image'] = implode("|",$images);
 
             $product->save();
-            return redirect('/products')->with('message', 'New Products added Succesfully!');
+
+            return back()->with('message', 'New Products added Succesfully!');
         }
         else{
             echo "error";

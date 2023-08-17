@@ -49,6 +49,7 @@ $total_quantity= App\Models\Cart::all()->where('user_ip',request()->ip())->sum('
     </div>
     @php
     $customer_id = Session::get('id');
+
 @endphp
     <form action="{{ url('/order_place'.$customer_id->id) }}" method="post">
         @csrf

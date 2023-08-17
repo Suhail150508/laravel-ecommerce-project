@@ -29,6 +29,7 @@ class SubCategoryController extends Controller
     public function create()
     {
        $catagories =  Category::all();
+
         return view('admin.subcategory.create',compact('catagories'));
     }
 
@@ -49,7 +50,7 @@ class SubCategoryController extends Controller
          $subcategories->image=$request->image->store('category');
 
          $subcategories->save();
-         return Redirect()->back();
+         return back()->with('message','Added new subcat');
      }
     /**
      * Display the specified resource.

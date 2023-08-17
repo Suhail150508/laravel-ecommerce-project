@@ -59,13 +59,11 @@
                 @endforeach
                 <tfoot>
                     @php
-                    $total_price= App\Models\Cart::all()->where('user_ip',request()->ip())->sum(function($t){
-                    return  $t->quantity * $t->price;
-                       });
+                    $total_price= App\Models\Order_Detail::where('order_id',$orders->id)->sum('product_price');
                        @endphp
                 <tr>
                     <td colspan="4" style="font-size: 20px;font-weight: 521;text-align: right; color: red"> Total Amount to pay</td>
-                <td><strong style="font-size: 20px; color: #007cff;">&#2547;{{     $total_price }}</strong></td>
+                <td><strong style="font-size: 20px; color: #007cff;">&#2547;{{    $total_price}}</strong></td>
                 </tr>
                 </tfoot>
             </table>

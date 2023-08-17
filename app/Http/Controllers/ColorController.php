@@ -43,7 +43,7 @@ $colors = explode(',',$request->color);
          $color = new Color;
          $color->color=Json_encode($colors);
          $color->save();
-         return Redirect()->back();
+         return back()->with('message','New Color added.');
 
      }
 

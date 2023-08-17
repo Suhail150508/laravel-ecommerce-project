@@ -89,6 +89,7 @@ Route::get('/products{id}',[ProductController::class,'status']);
 
 
 Route::get('/order',[OrderController::class,'order']);
+Route::post('/orders/{id}',[OrderController::class,'order_delete']);
 Route::get('/order_details/{id}',[OrderController::class,'order_details']);
 
 Route::get('/invoice/{id}',[OrderController::class,'invoice']);

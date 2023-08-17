@@ -28,6 +28,29 @@
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 
 
+
+
+             {{-- toastr info here --}}
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js" integrity="sha512-fHY2UiQlipUq0dEabSM4s+phmn+bcxSYzXP4vAXItBvBHU7zAM/mkhCZjtBEIJexhOMzZbgFlPLuErlJF2b+0g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+	<!-- start: CSS -->
+{{--
+	<link href="{{asset('admin/css/bootstrap-responsive.min.css')}}" rel="stylesheet"> --}}
+	{{-- <link id="base-style" href="{{asset('admin/css/style.css')}}" rel="stylesheet"> --}}
+	{{-- <link id="base-style-responsive" href="{{asset('admin/css/style-responsive.css')}}" rel="stylesheet"> --}}
+
+	<!-- end: CSS -->
+
+
     </head>
 	<body>
 		<!-- HEADER -->
@@ -56,6 +79,57 @@
 		<script src="js/nouislider.min.js"></script>
 		<script src="js/jquery.zoom.min.js"></script>
 		<script src="js/main.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+  <script>
+    @if (Session::has('message'))
+
+toastr.options={
+     'clossButton':true,
+     'progressBar':true,
+     'backgroundColor:rek':true,
+
+}
+toastr.success("{{ Session::get('message') }}"
+// , 'Success! New Student added'
+);
+
+// toastr.warnig("{{ Session::get('message') }}"
+// , 'Success! New Student added'
+// );
+
+       @endif
+   </script>
+
+
+   {{-- <script>
+    $(document).ready(function(){
+        toastr.options= {
+            "progressBar":true,
+            "positionClass":"toast-top-right"
+        }
+    });
+    window.addEventListener('success', event =>{
+
+        toastr.success(event.detail.message);
+    })
+    window.addEventListener('warning', event =>{
+
+        toastr.warning(event.detail.message);
+    })
+    window.addEventListener('error', event =>{
+
+        toastr.error(event.detail.message);
+    })
+
+    </script>
+
+
+@stack('scripts') --}}
 
 	</body>
 </html>

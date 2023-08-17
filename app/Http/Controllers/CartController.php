@@ -23,7 +23,7 @@ public function add_to_cart(Request $request){
     $check = Cart::where('product_id',$request->id)->where('user_ip',request()->ip())->first();
     if($check){
         $check = Cart::where('product_id',$request->id)->where('user_ip',request()->ip())->increment('quantity');
-        return Redirect()->back()->with('success','product added on cart');
+        return back()->with('message','product added on cart');
     }else{
         Cart::insert([
             'product_id'=>$request->id,
@@ -32,7 +32,9 @@ public function add_to_cart(Request $request){
             'user_ip'=>request()->ip(),
             ]);
 
-            return Redirect()->back()->with('success','product added on cart');
+            // $this->dispatchBrowserEvent('success',['message'=>'new product is added!']);
+
+            return back()->with('message','product added on cart');
     }
 
 }

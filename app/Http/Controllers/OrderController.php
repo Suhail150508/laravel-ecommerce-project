@@ -10,7 +10,14 @@ class OrderController extends Controller
 {
     public function order(){
       $orders =  Order::all();
-        return view('admin.order.order',compact('orders'));
+      $order_details =  Order_Detail::all();
+        return view('admin.order.order',compact('orders','order_details'));
+
+    }
+    public function order_delete($id){
+      $orders =  Order::find($id)->delete();
+
+        return back()->with('message', 'deleted');
 
     }
     public function order_details($id){

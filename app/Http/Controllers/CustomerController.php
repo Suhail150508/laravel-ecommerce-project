@@ -90,7 +90,7 @@ public function shipping(Request $request){
     $id = Shiping::insertGetId($sdata);
     Session()->put('sid', $id);
     Session()->put('name', $request->name);
-    return Redirect()->to('/payment');
+    return Redirect()->to('/payment')->with('message','Shiping address added Successfully');
 }
 
 
@@ -130,22 +130,28 @@ $oddata['product_price']=$cartContent->price;
 $oddata['product_sales_quantity']=$cartContent->quantity;
 Order_Detail::insertGetId($oddata);
 };
- return view('frontend.pages.well_done');
 
-// DB::table('order_details')->insert($oddata);
 
-// if($payment_method =='cash'){
-//  Cart::where('user_ip',request()->ip())->clear();
-//  return view('frontend.pages.well_done');
-// }
-// elseif($payment_method =='Bkash'){
-//     Cart::clear();
-//  return view('frontend.pages.well_done');
-// }
-// elseif($payment_method =='Nogod'){
-//     Cart::clear();
-//  return view('frontend.pages.well_done');
-// }
+
+
+if ($payment_method =='cash') {
+
+    Cart::select('user_ip',request()->ip())->delete();  // have to select for delete model
+    return view('frontend.pages.well_done');
+
+}elseif($payment_method =='Bkash'){
+    Cart::select('user_ip',request()->ip())->delete();  // have to select for delete model
+    return view('frontend.pages.well_done');
 
 }
+elseif($payment_method =='Nogod'){
+    Cart::select('user_ip',request()->ip())->delete();  // have to select for delete model
+    return view('frontend.pages.well_done');
+
+}
+
+
+
+}
+
 }

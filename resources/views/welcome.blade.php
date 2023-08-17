@@ -5,8 +5,6 @@
 
 
 
-
-
 		<!-- SECTION -->
 		<div class="section">
 			<!-- container -->
@@ -16,10 +14,10 @@
 					<!-- shop -->
                     @foreach ($categories as $category)
 
-					<div class="col-md-4 col-xs-6" >
+					<div class="col-md-3 col-xs-3" >
 						<div class="shop">
 							<div class="shop-img">
-								<img src="{{ asset('/storage/'.$category->image) }}" alt="" style="width:28rem;height:35rem">
+								<img src="{{ asset('/storage/'.$category->image) }}" alt="" style="width:25rem;height:15rem">
 							</div>
 							<div class="shop-body">
 								<h3>{{ $category->name }}<br>Collection</h3>
@@ -76,17 +74,17 @@
        $images = $product->image[0];
 @endphp
 
-					               	<div class="product">
+					               	<div class="product" style="flex:wrap">
 											<div class="product-img"><a href="{{ url('/view-details'.$product->id) }}">
-												<img src="{{ asset('/image/'.$images) }}" alt="" style="width:26rem;height:28rem">
+												<img src="{{ asset('/image/'.$images) }}" alt="" style="width:12rem;height:15rem">
 												<div class="product-label">
 													<span class="sale">-30%</span>
 													<span class="new">NEW</span>
 												</div>
 											</div></a>
 											<div class="product-body">
-										       <p class="product-category"><a href="{{ url('/view-details'.$product->id) }}">{{ $product->category->name }}</a></p>
-												<h3 class="product-name"><a href="{{ url('/view-details'.$product->id) }}">{{ $product->name }}</a></h3>
+										       {{-- <p class="product-category"><a href="{{ url('/view-details'.$product->id) }}">{{ $product->category->name }}</a></p>
+												<h3 class="product-name"><a href="{{ url('/view-details'.$product->id) }}">{{ $product->name }}</a></h3> --}}
 												<h4 class="product-price"><a href="{{ url('/view-details'.$product->id) }}">&#2547: {{  $product->price }} <del class="product-old-price">$990.00</del> </a> </h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
@@ -117,7 +115,7 @@
                                             </div>
 
 
-											<div class="add-to-cart">
+											<div class="add-to-cart" >
                                                 <form action="{{ url('/add-to-cart') }}" method="post">
                                                     @csrf
                                                 <input type="hidden" name="id" value="{{ $product->id }}">
@@ -232,15 +230,15 @@
 
                                        <div class="product" >
                                             <div class="product-img"><a href="{{ url('/view-details'.$topProduct->id) }}"  style="width: 4%; height:10%">
-                                                <img src="{{ asset('/image/'.$images) }}" alt="" style="width: 26rem;height:26rem">
+                                                <img src="{{ asset('/image/'.$images) }}" alt="" style="width: 12rem;height:15rem">
                                                 <div class="product-label">
                                                     <span class="sale">-30%</span>
                                                     <span class="new">NEW</span>
                                                 </div>
                                             </div></a>
                                             <div class="product-body">
-                                                <p class="product-category"><a href="{{ url('/view-details'.$topProduct->id) }}">{{ $topProduct->category->name }}</a></p>
-                                                <h3 class="product-name"><a href="{{ url('/view-details'.$topProduct->id) }}">{{ $topProduct->name }}</a></h3>
+                                                {{-- <p class="product-category"><a href="{{ url('/view-details'.$topProduct->id) }}">{{ $topProduct->category->name }}</a></p>
+                                                <h3 class="product-name"><a href="{{ url('/view-details'.$topProduct->id) }}">{{ $topProduct->name }}</a></h3> --}}
                                                 <h4 class="product-price"><a href="{{ url('/view-details'.$topProduct->id) }}">&#2547: {{  $topProduct->price }} <del class="product-old-price">$990.00</del> </a> </h4>
                                                 <div class="product-rating">
                                                     <i class="fa fa-star"></i>
@@ -587,5 +585,6 @@
 			<!-- /container -->
 		</div>
 		<!-- /SECTION -->
+
 
         @endsection

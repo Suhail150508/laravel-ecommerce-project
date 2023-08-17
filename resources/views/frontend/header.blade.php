@@ -13,11 +13,29 @@
                             $customer_id = Session::get('id');
                         @endphp
                         @if ( $customer_id != Null)
-                        <li><a href="{{ url('/logout') }}"><i class="fa fa-user-o"></i> Logout</a></li>
+
+                    <li>
+                         <div class="dropdown">
+							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"  style="color: white;background-color:black;border:none">
+								<i class="fa fa-solid fa-user" style="color: white"></i>{{ Session::get('name') }}
+
+							</a>
+							<ul class="dropdown-menu" >
+								<li class="dropdown-menu-title">
+ 									<span style="background-color:black;padding:6px;color:white;width:50px;margin:3px">Account Settings</span>
+								</li>
+								<li><a   href="#" style="color: black;margin-top:5px"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+								<li><a   href="{{ url('/logout') }}" style="color: black;margin-top:5px"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+								<li><a   href="{{ url('# ') }}" style="color: black;margin-top:5px"><i class="fa fa-info-circle" aria-hidden="true"></i>Details</a></li>
+							</ul>
+						</div>
+                    </li>
                         @else
                         <li><a href="{{ url('/login') }}"><i class="fa fa-user-o"></i> Login</a></li>
                         @endif
                         <li><a href="{{ url('/register') }}"><i class="fa fa-user-o"></i> Sign-up</a></li>
+
+
 					</ul>
 				</div>
 			</div>
@@ -31,11 +49,12 @@
 					<div class="row">
 						<!-- LOGO -->
 						<div class="col-md-3">
-							<div class="header-logo">
+							<div class="header-logo" style="margin-right: 2rem">
 								<a href="#" class="logo">
 									<img src="./img/ecomm_logo.png" alt="" style="width: 60px;height:60px;border-radius:30px">
 								</a>
 							</div>
+                            <h2 style="color: white;margin-top:1rem;">Shopping</h2>
 						</div>
 						<!-- /LOGO -->
 
@@ -118,20 +137,59 @@
         <!-- container -->
         <div class="container">
             <!-- responsive-nav -->
-            <div id="responsive-nav">
+            <div id="responsive-nav" style="margin-top: 2rem;font-size:2rem">
                 <!-- NAV -->
+                {{-- <ul class="main-nav nav navbar-nav">
+                    <li ><a href="{{url('/')}}"><h4>Home</h4></a></li>
+                    <li ><span style="color: white">.</span></li>
+                    <li class="active"><a href="#"><h4>Categories: </h4></a></li>
+
+                    <li class="active">
+
+                        @foreach ($categories as $category )
+                        <div class="btn-group">
+                            <button class=" btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:lightgray;color:black;font-weight:200">
+                                {{ $category->name }} <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                @foreach ($subcategories as $subcategory )
+                               <h5><a class="btn btn-primary"  href="{{ url('/product_by_subCat'.$subcategory->id) }}">{{ $subcategory->name }}</a></h5>
+                                @endforeach
+                            </div>
+                          </div>
+                          @endforeach
+                    </li>
+                    <li ><span style="color: white">.</span></li>
+                    <li ><span style="color: white">.</span></li>
+                    <li ><span style="color: white">.</span></li>
+                    <li><a href="/admins"><h4>Admin</h4></a></li>
+
+                </ul> --}}
+
                 <ul class="main-nav nav navbar-nav">
-                    <li class="active"><a href="{{url('/')}}">Home</a></li>
+                    <li ><a href="{{url('/')}}"><h4>Home</h4></a></li>
+                    <li ></li>
+                    <li ><span style="color: white">.</span></li>
+                    <li ><span style="color: white">.</span></li>
+                    <li ><span style="color: white">.</span></li>
+                    <li class="active"><a href="#"><h4>Categories: </h4></a></li>
                     @foreach ($categories as $category )
                     <li><a href="{{ url('/product_by_cat'.$category->id) }}">{{ $category->name }}</a></li>
                     @endforeach
-
+                    <li ><span style="color: white">.</span></li>
+                    <li ><span style="color: white">.</span></li>
+                    <li ><span style="color: white">.</span></li>
+                    <li ><span style="color: white">.</span></li>
+                    <li ><span style="color: white">.</span></li>
+                    <li ><span style="color: white">.</span></li>
 
                     <li><a href="/admins"><h4>Admin</h4></a></li>
                 </ul>
+
                 <!-- /NAV -->
                 <!-- /NAV -->
             </div>
+
             <!-- /responsive-nav -->
         </div>
         <!-- /container -->

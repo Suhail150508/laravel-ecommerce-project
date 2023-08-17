@@ -166,12 +166,20 @@ use App\Models\Product;
                                         <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
                                     </div>
                                 </div>
-                                <div class="add-to-cart">
+                                <div class="add-to-cart" >
+                                    <form action="{{ url('/add-to-cart') }}" method="post">
+                                        @csrf
+                                    <input type="hidden" name="id" value="{{ $product->id }}">
+                                    <input type="hidden" name="price" value="{{ $product->price }}">
                                     <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                     </form>
                                 </div>
+
                             </div>
                         </div>
                         <!-- /product -->
+
+
                         @endforeach
 
                         <div class="clearfix visible-sm visible-xs"></div>
@@ -199,4 +207,8 @@ use App\Models\Product;
         <!-- /container -->
     </div>
     <!-- /SECTION -->
+
+
+
+
 @endsection

@@ -43,7 +43,7 @@ $sizes = explode(',',$request->size);
          $size = new Size;
          $size->size=Json_encode($sizes);
          $size->save();
-         return Redirect()->back();
+         return back()->with('message','New Size added.');
 
      }
 

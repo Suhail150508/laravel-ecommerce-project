@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Support\ServiceProvider;
 use view;
 
@@ -27,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
     {
 
      view()->share('categories',$categories = Category::all());
+     view()->share('subcategories',$subcategories = SubCategory::all());
 
 
 

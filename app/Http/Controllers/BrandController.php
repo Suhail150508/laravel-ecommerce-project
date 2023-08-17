@@ -44,7 +44,8 @@ class BrandController extends Controller
          $brands->description = $request->description;
 
         $brands->save();
-         return Redirect()->back();
+        // $this->dispatchBrowserEvent('success',['message'=>'new brand is added!']);
+        return back()->with('message','New brand added.');
      }
 
     /**
